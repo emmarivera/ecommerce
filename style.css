@@ -210,7 +210,8 @@ p{
 }
 
 img {
-    width: 100%;
+    width: 180px;
+    height:250px;
     display: block;
    }
 
@@ -246,7 +247,7 @@ img {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #256d85;
+    background-color: purple;
     color: #fff;
 }
 
@@ -295,7 +296,7 @@ img {
 
 .content_cart-total {
     height: 10%;
-    background-color: green;
+    background-color: fuchsia;
 
     display: flex;
     justify-content: center;
