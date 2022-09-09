@@ -2,10 +2,12 @@ let cart = {};
 
 function printClothesInCart(elementHTML) {
     let html = "";
+    let totalPrice = 0;
+    let totalCount = 0;
 
     const arrayCart = Object.values(cart);
 
-    arrayCart.forEach(({ id, name, urlImages, amount }) => {
+    arrayCart.forEach(({ id, name, urlImages, price, amount }) => {
         html += `
             <div class="item_cart">
                 <div class="item_cart-img">
@@ -18,12 +20,23 @@ function printClothesInCart(elementHTML) {
                     <span id="amount">${amount}</span>
                     <i class='bx bx-plus-medical'></i>
                     <i class='bx bx-trash'></i>
+                    <p>  $${price * amount}</p>
                 </div>
             </div>
         `;
     });
 
+    arrayCart.forEach(({ amount, price }) => {
+		totalPrice += amount * price;
+	});
+	arrayCart.forEach(({ amount }) => {
+		totalCount += amount;
+	});
+
     elementHTML.innerHTML = html;
+    productListTotal.innerHTML = `<p>Total: $${totalPrice}</p>`;
+    
+    
 }
 function printClothes(elementHTML, data) {
     let html = "";

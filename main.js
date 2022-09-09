@@ -67,3 +67,5 @@ contentCartBody.addEventListener("click", (e) => {
 });
 
 printClothes(contentClothes, dataDB);
+
+
